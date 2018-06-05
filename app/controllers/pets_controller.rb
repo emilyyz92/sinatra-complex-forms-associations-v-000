@@ -11,7 +11,7 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do
-    @pet = Pet.update(params[:pet])
+    @pet = Pet.create(params[:pet])
     if params[:owner][:name] != ""
       owner = Owner.create(params[:owner])
       @pet.owner_id = owner.id
